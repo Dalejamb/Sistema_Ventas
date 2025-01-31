@@ -4,6 +4,8 @@
  */
 package Controlador;
 
+import Modelo.Empleado;
+import Modelo.EmpleadoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -37,8 +39,8 @@ public class validar extends HttpServlet {
         processRequest(request, response);
         String accion=request.getParameter("accion");
         if(accion.equalsIgnoreCase("Ingresar")){
-            String user.request.getParameter("txtuser");
-            String pass.request.getParameter("txtpass");
+            String user=request.getParameter("txtuser");
+            String pass=request.getParameter("txtpass");
             em=edao.validar(user, pass);
             if(em.getUser()!=null){
                 request.setAttribute("Usuario", em);
